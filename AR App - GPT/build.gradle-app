@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion 33
+
+    defaultConfig {
+        applicationId "com.kf7dwc.archatgpt"
+        minSdkVersion 24
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // Add ARCore library to dependencies
+    dependencies {
+        implementation 'com.google.ar:core:1.36.0'
+    }
+}
+
+dependencies {
+    implementation 'ai.openai.android:openai:1.1.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.github.openai:openai-java:1.3.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.17.1' // add Sceneform UX library
+    implementation 'ai.openai.api:openai-api-client:2.0.0' // add OpenAI API client library
+    implementation 'com.github.bumptech.glide:glide:4.12.0' // add Glide library for image loading
+    implementation 'org.tensorflow:tensorflow-lite:2.8.0' // add TensorFlow Lite library
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.8.0' // add TensorFlow Lite GPU support library
+}
